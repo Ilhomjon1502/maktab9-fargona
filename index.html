@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>9-maktab × Codial</title>
+  <meta name="description" content="Farg'ona 9-maktab o'quvchilari uchun Codial IT akademiyasida dasturlash darslari. Darsga yozilish.">
+  <style>
+    :root {
+      /* Codial brend ranglari: logodagi ko'k #00527E va to'q sariq #FF9F00 */
+      --blue-900: #003a5a;
+      --blue-600: #00527e;
+      --sky-400: #0a7fb8;
+      --ink: #0f172a;
+      --muted: #475569;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --line: #e2e8f0;
+      --accent: #ff9f00;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-600) 55%, var(--sky-400) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 56px 0 64px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      background: rgba(255, 255, 255, .18);
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 999px;
+      padding: 6px 14px;
+    }
+    .hero h1 {
+      font-size: clamp(40px, 11vw, 72px);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-top: 20px;
+    }
+    .hero h1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .hero h1 .x { opacity: .6; font-weight: 400; font-size: .7em; line-height: 1; }
+    .hero h1 .logo { width: min(300px, 72vw); height: auto; margin: 6px 0 10px; }
+    .hero p {
+      font-size: clamp(17px, 4.5vw, 20px);
+      max-width: 560px;
+      margin: 16px auto 0;
+      opacity: .95;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--accent);
+      color: var(--ink);
+      font-size: 20px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
+      transition: transform .15s ease;
+    }
+    .btn:hover, .btn:focus-visible { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    /* Sections */
+    section { padding: 48px 0; }
+    h2 { font-size: clamp(26px, 6vw, 34px); font-weight: 800; }
+    .lead { color: var(--muted); font-size: 17px; margin-top: 10px; }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .fact {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .fact b { display: block; font-size: 24px; color: var(--blue-600); }
+    .fact span { color: var(--muted); font-size: 15px; }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .course {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .course .icon { font-size: 30px; }
+    .course h3 { font-size: 19px; margin-top: 8px; }
+    .course p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+    .course { display: flex; flex-direction: column; }
+    .meta {
+      margin-top: auto;
+      padding-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .price { font-size: 18px; font-weight: 800; color: var(--blue-600); }
+    .price small { font-size: 14px; font-weight: 500; color: var(--muted); }
+    .tag {
+      font-size: 13px;
+      font-weight: 600;
+      background: #e3f0f7;
+      color: var(--blue-900);
+      border-radius: 999px;
+      padding: 3px 10px;
+    }
+
+    .socials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      font-weight: 700;
+      transition: border-color .15s ease;
+    }
+    .social:hover, .social:focus-visible { border-color: var(--blue-600); }
+    .social svg { flex: none; width: 32px; height: 32px; }
+    .social span small { display: block; font-weight: 400; color: var(--muted); font-size: 14px; }
+
+    .steps { list-style: none; margin-top: 24px; display: grid; gap: 12px; }
+    .steps li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .num {
+      flex: none;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--blue-600);
+      color: #fff;
+      font-weight: 700;
+      display: grid; place-items: center;
+    }
+
+    .cta {
+      background: var(--blue-900);
+      color: #fff;
+      text-align: center;
+      border-radius: 20px;
+      padding: 36px 20px;
+    }
+    .cta p { opacity: .9; margin-top: 8px; }
+
+    /* Tadbir rasmlari */
+    .photos { display: grid; gap: 12px; margin-top: 24px; }
+    .photos.two { grid-template-columns: 1fr 1fr; }
+    @media (min-width: 720px) { .photos.duo { grid-template-columns: 1fr 1fr; } }
+    figure { margin: 0; }
+    .photos img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      background: var(--line);
+    }
+    figcaption { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
+    .bonus {
+      background: linear-gradient(135deg, #fff7e6, #ffffff);
+      border: 2px solid var(--accent);
+      border-radius: 20px;
+      padding: 24px 20px;
+    }
+    .bonus .steps li { border-color: #ffe2b0; }
+    .bonus .num { background: var(--accent); color: var(--ink); }
+    .note {
+      margin-top: 14px;
+      font-weight: 700;
+      color: #9a5b00;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 8px 0 40px;
+    }
+    footer a { color: var(--blue-600); }
+    footer .logo { display: block; width: 140px; height: auto; margin: 0 auto 10px; }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge">Faqat 9-maktab o'quvchilari uchun</span>
+      <h1><span>9-maktab</span><span class="x">×</span><img class="logo" src="img/codial-white.png" alt="Codial" width="715" height="172"></h1>
+      <p>Dasturlashni o'rganmoqchimisan? Codial IT akademiyasida darslarga yozil, birinchi saytingni o'zing yasa!</p>
+      <a class="btn" href="https://t.me/codialuz" target="_blank" rel="noopener">Darsga yozilish →</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- [TADBIR] Eng iste'dodlilar / o'rinlar — rasm va o'rinlar kelganda izohni ochib, matn va rasmlarni almashtir (CLAUDE.md'ga qara)
+    <section>
+      <div class="wrap">
+        <h2>🏆 Eng iste'dodlilar</h2>
+        <p class="lead">9-maktabdagi tadbirda o'zini eng yaxshi ko'rsatgan o'quvchilar Codial'dan <b>100%</b> va <b>50%</b> bonus sertifikatlari bilan taqdirlandi. Tabriklaymiz!</p>
+        <div class="photos duo">
+          <figure>
+            <img src="img/tadbir/iqtidorlilar-1.webp" alt="Bonus sertifikatlarini olgan o'quvchilar sahnada" width="1200" height="900">
+            <figcaption>100% va 50% bonus sertifikati sohiblari</figcaption>
+          </figure>
+          <figure>
+            <img src="img/tadbir/iqtidorlilar-2.webp" alt="O'quvchi 50% bonus sertifikati bilan Codial ustozlari yonida" width="1200" height="900" loading="lazy">
+            <figcaption>Kompyuter savodxonligi kursiga 50% bonus</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    -->
+
+    <!-- [TADBIR] Bonus sertifikat — faqat 9-maktabda ham bonus berilsa ochiladi, shartlarini tekshir
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="bonus">
+          <h2>🎁 Sertifikat oldingmi?</h2>
+          <p class="lead">Bonus <b>Kompyuter savodxonligi</b> kursi uchun amal qiladi. Undan foydalanish oson:</p>
+          <ol class="steps">
+            <li><span class="num">1</span><div><b>Sertifikatni ol</b> — sen buni allaqachon qilding ✔</div></li>
+            <li><span class="num">2</span><div><b>Ota-onang bilan Codial'ga kel.</b></div></li>
+            <li><span class="num">3</span><div><b>Bepul sinov darsiga yozil.</b></div></li>
+          </ol>
+          <p class="note">⏰ Diqqat: bonus 7 kun ichida amal qiladi — kechiktirma!</p>
+        </div>
+      </div>
+    </section>
+
+    -->
+
+    <section style="padding-top:0">
+      <div class="wrap">
+        <h2>Codial nima?</h2>
+        <p class="lead">Codial — Farg'ona shahridagi IT akademiya. U 2021-yilda Inha universiteti bitiruvchisi tomonidan tashkil etilgan. Maqsadi — viloyatdagi yoshlarga zamonaviy IT kasblarini o'rgatish, poytaxtga bormasdan ham dasturchi bo'lish imkonini berish.</p>
+        <div class="facts">
+          <div class="fact"><b>2021</b><span>yildan beri ta'lim beradi</span></div>
+          <div class="fact"><b>11 yosh</b><span>dan boshlab o'qish mumkin</span></div>
+          <div class="fact"><b>Farg'ona</b><span>shahrida joylashgan</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="wrap">
+        <h2>Nimalarni o'rganasan?</h2>
+        <div class="courses">
+          <div class="course">
+            <div class="icon">🤖</div>
+            <h3>Vibe coding</h3>
+            <p>Sun'iy intellekt (AI) yordamida sayt va ilovalar yasashni o'rganish.</p>
+            <div class="meta">
+              <span class="price">750 000 so'm <small>/ oy</small></span>
+            </div>
+          </div>
+          <div class="course">
+            <div class="icon">⚙️</div>
+            <h3>Backend</h3>
+            <p>Saytlar va ilovalarning “miya” qismi: server va ma'lumotlar bazasi.</p>
+            <div class="meta">
+              <span class="price">750 000 so'm <small>/ oy</small></span>
+            </div>
+          </div>
+          <div class="course">
+            <div class="icon">📱</div>
+            <h3>Flutter</h3>
+            <p>Bitta kod bilan Android va iPhone uchun mobil ilovalar yaratish.</p>
+            <div class="meta">
+              <span class="price">750 000 so'm <small>/ oy</small></span>
+            </div>
+          </div>
+          <div class="course">
+            <div class="icon">🛡️</div>
+            <h3>Kiberxavfsizlik</h3>
+            <p>Saytlar, tarmoqlar va ma'lumotlarni xakerlardan himoya qilishni o'rganish.</p>
+            <div class="meta">
+              <span class="price">750 000 so'm <small>/ oy</small></span>
+            </div>
+          </div>
+          <div class="course">
+            <div class="icon">📣</div>
+            <h3>SMM</h3>
+            <p>Instagram va Telegram sahifalarini yuritish, ijtimoiy tarmoqlarda reklama.</p>
+            <div class="meta">
+              <span class="price">750 000 so'm <small>/ oy</small></span>
+            </div>
+          </div>
+          <div class="course">
+            <div class="icon">💻</div>
+            <h3>Kompyuter savodxonligi</h3>
+            <p>Kompyuter bilan ishlashni noldan boshlash.</p>
+            <div class="meta">
+              <span class="price">500 000 so'm <small>/ oy</small></span>
+              <span class="tag">1 oy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [FORMA] Qanday yozilaman? — 9-maktab uchun alohida forma havolasi kelganda izohni och
+    <section style="padding-top:0">
+      <div class="wrap">
+        <h2>Qanday yozilaman?</h2>
+        <ol class="steps">
+          <li><span class="num">1</span><div><b>“Darsga yozilish” tugmasini bos.</b><br>Qisqa forma ochiladi.</div></li>
+          <li><span class="num">2</span><div><b>Ismingni, telefon raqamingni va sinfingni yoz.</b><br>Notebook (kompyuter) bor-yo'qligini ham belgila.</div></li>
+          <li><span class="num">3</span><div><b>“Yuborish” tugmasini bos.</b><br>Codial jamoasi sen bilan bog'lanadi.</div></li>
+        </ol>
+      </div>
+    </section>
+
+    -->
+
+    <!-- [TADBIR] Tadbirdan lavhalar — rasmlar kelganda izohni och
+    <section style="padding-top:0">
+      <div class="wrap">
+        <h2>📸 Tadbirdan lavhalar</h2>
+        <p class="lead">9-maktab o'quvchilari bilan Codial tadbiri bo'lib o'tdi.</p>
+        <div class="photos">
+          <figure>
+            <img src="img/tadbir/tadbir-1.webp" alt="Majlislar zalida Codial tadbirida o'tirgan o'quvchilar" width="1200" height="900" loading="lazy">
+          </figure>
+        </div>
+        <div class="photos two" style="margin-top:12px">
+          <figure>
+            <img src="img/tadbir/tadbir-2.webp" alt="Codial ustozi o'quvchilarga savol bermoqda" width="900" height="1200" loading="lazy">
+          </figure>
+          <figure>
+            <img src="img/tadbir/tadbir-3.webp" alt="Tadbirni tinglayotgan o'quvchilar" width="900" height="1200" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    -->
+
+    <section style="padding-top:0">
+      <div class="wrap">
+        <h2>Codialni kuzatib bor</h2>
+        <div class="socials">
+          <a class="social" href="https://t.me/codialuz" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.4 11.7l11.6-4.5c.5-.2 1 .1.8 1l-2 9.3c-.1.6-.5.8-1 .5l-3-2.2-1.5 1.4c-.2.2-.3.3-.6.3l.2-3.1 5.6-5c.2-.2 0-.3-.4-.1l-6.9 4.3-3-.9c-.6-.2-.7-.6.2-1z"/></svg>
+            <span>Telegram<small>@codialuz</small></span>
+          </a>
+          <a class="social" href="https://instagram.com/codialuz" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f9a825"/><stop offset=".5" stop-color="#e91e63"/><stop offset="1" stop-color="#7b1fa2"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.1" cy="7.9" r="1" fill="#fff"/></svg>
+            <span>Instagram<small>@codialuz</small></span>
+          </a>
+          <a class="social" href="https://youtube.com/@Codialuz" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect y="3" width="24" height="18" rx="5" fill="#ff0000"/><path fill="#fff" d="M10 8.5v7l6-3.5z"/></svg>
+            <span>YouTube<small>@Codialuz</small></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="cta">
+          <h2>Seni darsda kutamiz!</h2>
+          <p>Hoziroq yozilib qo'y — 1 daqiqa ham ketmaydi.</p>
+          <a class="btn" href="https://t.me/codialuz" target="_blank" rel="noopener">Darsga yozilish →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <img class="logo" src="img/codial.png" alt="Codial" width="800" height="192">
+      9-maktab, Farg'ona · Codial IT akademiyasi
+    </div>
+  </footer>
+
+</body>
+</html>
