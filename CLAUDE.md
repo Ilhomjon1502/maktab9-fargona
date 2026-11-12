@@ -22,7 +22,7 @@ Foydalanuvchi rasm va o'rinlarni beradi. Imkon qadar kam so'rov va tez deploy:
 
 1. **Rasmlar:** `python -I scripts/rasm.py <manba> img/tadbir/<nom>.webp [x0,y0,x1,y1]` — 1200px WebP, metadata'siz. Avval rasmlarni ko'rib chiq (Read), keraksiz/takroriy/xira rasmlarni tanlab ol.
 2. **O'rinlar/iste'dodlilar:** `[TADBIR] Eng iste'dodlilar / o'rinlar` izohini och, sarlavha va matnni berilgan ma'lumotga moslab o'zgartir (1-, 2-, 3-o'rin va h.k.), rasmlarni qo'y.
-3. **Galereya:** `[TADBIR] Tadbirdan lavhalar` izohini och, rasmlarni qo'y.
+3. **Galereya:** bajarildi — "Tadbirdan lavhalar" 7 ta rasm bilan ochilgan (`img/tadbir/tadbir-1..7.webp`). Yangi rasm kelsa, shu bo'limga qo'sh.
 4. **Bonus:** `[TADBIR] Bonus sertifikat` — faqat 9-maktabda ham bonus berilgan bo'lsa och. Shartlari (nechta kun, qaysi kurs) foydalanuvchidan so'ra; 6-maktabdagi shart (7 kun, Kompyuter savodxonligi) bu yerga avtomatik o'tmaydi.
 5. Telefon o'lchamida (375px) tekshir, push qil.
 
