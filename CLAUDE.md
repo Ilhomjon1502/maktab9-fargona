@@ -28,14 +28,11 @@ Foydalanuvchi rasm va o'rinlarni beradi. Imkon qadar kam so'rov va tez deploy:
 
 Izohni ochganda `<!--` va `-->` qatorlarini o'chir. Izoh ichida `--` ishlatma (HTML buzilishi mumkin).
 
-## Darsga yozilish formasi — HALI YO'Q
+## Darsga yozilish
 
-6-maktabning Google Formasi ("Faqat 6-maktab uchun") bu saytga **ataylab ulanmagan**, aks holda ikki maktab javoblari aralashib ketadi. Hozir "Darsga yozilish" tugmalari (hero va pastdagi CTA) vaqtincha Codial Telegramiga (https://t.me/codialuz) olib boradi.
+"Darsga yozilish" tugmalari (hero va pastdagi CTA, ikkalasi `class="btn"`) Codial'ning rasmiy saytidagi ariza oynasiga olib boradi: https://codialinfo.uz/#ariza (maydonlar: ism, telefon, qiziqqan kurs, rozilik). Ikkala tugmani birga o'zgartir.
 
-9-maktab formasi kelganda:
-1. `index.html` da `https://t.me/codialuz` bo'lgan **ikkita** "Darsga yozilish" tugmasi hrefini yangi forma havolasiga almashtir (footerdagi ijtimoiy tarmoq tugmasi — Telegram — qolsin).
-2. `[FORMA] Qanday yozilaman?` izohini och; qadamlarni formadagi maydonlarga moslab tekshir.
-3. Bu bo'limni CLAUDE.md'dan olib tashla.
+6-maktabning Google Formasi 9-maktabga **ulanmagan** (javoblar aralashib ketmasin). Agar 9-maktab uchun alohida forma kerak bo'lsa, tugmalar hrefini almashtir.
 
 ## Fayllar
 
