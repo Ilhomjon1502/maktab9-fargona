@@ -21,7 +21,7 @@ GitHub Pages `main` branch'dan avtomatik chiqaradi.
 Foydalanuvchi rasm va o'rinlarni beradi. Imkon qadar kam so'rov va tez deploy:
 
 1. **Rasmlar:** `python -I scripts/rasm.py <manba> img/tadbir/<nom>.webp [x0,y0,x1,y1]` — 1200px WebP, metadata'siz. Avval rasmlarni ko'rib chiq (Read), keraksiz/takroriy/xira rasmlarni tanlab ol.
-2. **O'rinlar/iste'dodlilar:** `[TADBIR] Eng iste'dodlilar / o'rinlar` izohini och, sarlavha va matnni berilgan ma'lumotga moslab o'zgartir (1-, 2-, 3-o'rin va h.k.), rasmlarni qo'y.
+2. **Eng iste'dodlilar:** bajarildi — 100% va 50% bonus sertifikat sohiblari bilan 6 ta rasm (`iqtidorlilar-1..6`). Rasmda sertifikatdagi ismlar o'qilsa, xiralashtir (Pillow GaussianBlur).
 3. **Galereya:** bajarildi — "Tadbirdan lavhalar" 10 ta rasm bilan ochilgan (`img/tadbir/tadbir-1..10.webp`; bir xil kadrlar saralangan). Yangi rasm kelsa, shu bo'limga qo'sh.
 4. **Bonus:** `[TADBIR] Bonus sertifikat` — faqat 9-maktabda ham bonus berilgan bo'lsa och. Shartlari (nechta kun, qaysi kurs) foydalanuvchidan so'ra; 6-maktabdagi shart (7 kun, Kompyuter savodxonligi) bu yerga avtomatik o'tmaydi.
 5. Telefon o'lchamida (375px) tekshir, push qil.
@@ -38,7 +38,7 @@ Izohni ochganda `<!--` va `-->` qatorlarini o'chir. Izoh ichida `--` ishlatma (H
 
 - `index.html` — butun sayt, CSS ichida. Tashqi kutubxona/framework/JS yo'q — shunday qolsin.
 - `img/codial-white.png` (hero, to'q fon), `img/codial.png` (footer, oq fon).
-- `img/tadbir/` — tadbir rasmlari (hozircha bo'sh, `scripts/rasm.py` yaratadi).
+- `img/tadbir/` — tadbir rasmlari (`scripts/rasm.py` yaratadi). `iqtidorlilar-1..6` — "Eng iste'dodlilar" bo'limi (sertifikatdagi ismlar xiralashtirilgan), `tadbir-1..10` — galereya.
 - `qr/qr-maktab9.png` (2000px), `qr/qr-maktab9.svg` — pechat uchun QR kod.
 - `.claude/launch.json` — lokal server (`site`, `python -m http.server 8000`). Rasmlarni `file://` orqali emas, server orqali ko'r.
 
